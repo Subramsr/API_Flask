@@ -15,7 +15,9 @@ jobs:
    - name: Checkout
      uses: actions/checkout@v5.0.0
    - name: List files in workspace
-     run: ls -al
+     run: |
+      echo "Current directory: $(pwd)"
+      ls -al
      
  build:
   needs: code-checkout
