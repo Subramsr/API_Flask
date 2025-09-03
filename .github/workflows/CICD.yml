@@ -3,6 +3,11 @@ name: CI
 on:
  workflow_dispatch
 
+ env:
+  DOCKER_IMAGE: subramsr/python_image
+  DOCKER_USERNAME: ${{var.DOCKER_NAME}}
+  DOCKER_PASSWORD: ${{var.DOCKER_PASSWD}}
+
 jobs:
  code-checkout:
   runs-on: ubuntu-latest
