@@ -64,7 +64,7 @@ jobs:
      with:
       path: ~/.sonar/cache
       key: ${{runner.os}}-sonar
-      restore-keys: ${{runner-os}}-sonar
+      restore-keys: ${{runner.os}}-sonar
    - name: Run SonarQube Analysis
      uses: SonarSource/sonarcloud-github-action@master
      with:
