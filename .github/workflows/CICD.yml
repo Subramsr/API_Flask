@@ -28,6 +28,9 @@ jobs:
      with:
       username: ${{env.DOCKER_USERNAME}}
       password: ${{env.DOCKER_PASSWORD}}
+   - name: Checkout
+     uses: actions/checkout@v5.0.0
+     
    - name: Build docker image
      run: |
       echo "Current directory: $(pwd)"
