@@ -7,6 +7,8 @@ env:
   DOCKER_IMAGE: subramsr/flaskimg
   DOCKER_USERNAME: ${{vars.DOCKER_NAME}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWD}}
+  SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+  SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
 
 jobs:
  code-checkout:
