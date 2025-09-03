@@ -29,7 +29,8 @@ jobs:
    - name: Build docker image
      run: |
       echo "Current directory: $(pwd)"
-      docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} -f Dockerfile API_Flask
+      cd ..
+      docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} .
       docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
      
      
