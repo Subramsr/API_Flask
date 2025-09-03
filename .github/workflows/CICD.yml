@@ -3,7 +3,7 @@ name: CI
 on:
  workflow_dispatch
 
- env:
+env:
   DOCKER_IMAGE: subramsr/python_image
   DOCKER_USERNAME: ${{vars.DOCKER_NAME}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWD}}
