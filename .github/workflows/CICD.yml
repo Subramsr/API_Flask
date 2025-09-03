@@ -30,6 +30,7 @@ jobs:
      run: |
       echo "Current directory: $(pwd)"
       cd ..
+      ls -al
       docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} .
       docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
      
