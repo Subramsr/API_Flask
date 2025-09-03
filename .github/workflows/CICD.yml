@@ -23,7 +23,7 @@ jobs:
      with:
       username: ${{env.DOCKER_USERNAME}}
       password: ${{env.DOCKER_PASSWORD}}
-   - name: Docker Build
+   - name: Build Docker image
      run: |
       docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}}
       docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
