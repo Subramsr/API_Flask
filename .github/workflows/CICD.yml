@@ -28,6 +28,7 @@ jobs:
    - name: Build docker image
      run: |
       docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} .
+      working-directory: ./API_Flask
       docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
      
      
