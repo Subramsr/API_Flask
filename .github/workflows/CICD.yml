@@ -4,7 +4,7 @@ on:
  workflow_dispatch
 
 env:
-  DOCKER_IMAGE: subramsr/python_image
+  DOCKER_IMAGE: subramsr/flaskimg
   DOCKER_USERNAME: ${{vars.DOCKER_NAME}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWD}}
 
