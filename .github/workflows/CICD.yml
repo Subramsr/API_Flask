@@ -46,7 +46,7 @@ jobs:
       docker pull $DOCKER_IMAGE:latest
    - name: Run container from pulled image
      run: |
-      docker run -d -p 5000:5000 flask_app $DOCKER_IMAGE:latest
+      docker run -d -p 5000:5000 $DOCKER_IMAGE:latest
      
      
   
