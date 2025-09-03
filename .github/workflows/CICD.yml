@@ -61,17 +61,12 @@ jobs:
      with:
       distribution: 'microsoft'
       java-version: '17'
-   - name: Cache SonarQube packages
-     uses: actions/cache@v4
+   - name: Official SonarQube Scan
+     uses: SonarSource/sonarqube-scan-action@v5.1.0
      with:
-      path: ~/.sonar/cache
-      key: ${{runner.os}}-sonar
-      restore-keys: ${{runner.os}}-sonar
-   - name: Run SonarQube Analysis
-     uses: SonarSource/sonarcloud-github-action@master
-     with:
+      projectBaseDir: .
       args: |
        -Dsonar.projectKey=my_project_key \
-       -Dsonar.organization=my_org \
        -Dsonar.host.url=${{env.SONAR_HOST_URL}} \
-       -Dsonar.login=${{env.SONAR_TOKEN}}
+       -Dsonar.login=${{env.SONAR_TOKEN}} \
+       -Dsonar.working.directory=./.scannerwork
