@@ -31,7 +31,6 @@ jobs:
    - name: Build docker image
      run: |
       echo "Current directory: $(pwd)"
-      cd ../..
       ls -al
       # docker build -t $DOCKER_IMAGE:${{github.sha}} .
       # docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
