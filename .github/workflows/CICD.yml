@@ -41,9 +41,12 @@ jobs:
      run: |
       docker push $DOCKER_IMAGE:${{github.sha}}
       docker push $DOCKER_IMAGE:latest
-   - name: Container Creation
+   - name: Pull the docker image(latest)
      run: |
-      docker run -d -p 5000:5000 $DOCKER_IMAGE:latest
+      docker pull $DOCKER_IMAGE:latest
+   - name: Run container from pulled image
+     run: |
+      docker run -d -p 5000:5000 flask_app $DOCKER_IMAGE:latest
      
      
   
