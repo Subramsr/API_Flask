@@ -28,7 +28,7 @@ jobs:
       password: ${{env.DOCKER_PASSWORD}}
    - name: Build docker image
      run: |
-      docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} .
+      docker build -t ${{env.DOCKER_IMAGE}}:${{github.sha}} -f API_Flask/Dockerfile API_Flask
       docker tag $DOCKER_IMAGE:${{github.sha}} $DOCKER_IMAGE:latest
      
      
