@@ -43,7 +43,7 @@ jobs:
       docker push $DOCKER_IMAGE:latest
    - name: Container Creation
      run: |
-      docker run -d $DOCKER_IMAGE:${{github.sha}} -p 5000:5000 $DOCKER_IMAGE:latest
+      docker run -d -p 5000:5000 $DOCKER_IMAGE:latest
      
      
   
