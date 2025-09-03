@@ -48,7 +48,31 @@ jobs:
      run: |
       docker run -d -p 5000:5000 $DOCKER_IMAGE:latest
      
-     
+ SonarQube:
+  needs: code-checkout
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v5.0.0
+   - name: Setup Java JDK
+     uses: actions/setup-java@v5.0.0
+     with:
+      distribution: 'microsoft'
+      java-version: '17'
+   - name: Cache SonarQube packages
+     uses: actions/cache@v4
+     with:
+      path: ~/.sonar/cache
+      key: ${{runner.os}}-sonar
+      restore-keys: ${{runner-os}}-sonar
+   - name: Run SonarQube Analysis
+     uses: SonarSource/sonarcloud-github-action@master
+     with:
+      args: >
+       -Dsonar.projectKey = my_project_key
+       -Dsonar.organization = my_org
+       -Dsonar.host.url = ${{env.SONAR_HOST_URL}}
+       -Dsonar.login = ${{env.SONAR_TOKEN}}
   
  
 
