@@ -67,6 +67,12 @@ jobs:
       path: ~/.sonar/cache
       key: ${{runner.os}}-sonar
       restore-keys: ${{runner.os}}-sonar
+   
+   - name: Debug Sonar Scanner
+     run: |
+      sonar-scanner --version
+      echo "JAVA_HOME=$JAVA_HOME"
+
    - name: Run SonarQube Analysis
      uses: SonarSource/sonarcloud-github-action@master
      with:
