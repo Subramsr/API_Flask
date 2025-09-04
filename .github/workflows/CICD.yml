@@ -77,9 +77,7 @@ jobs:
       args: >
        -Dsonar.projectKey=API_Flask
        -Dsonar.organization=subramsr
-     env:
-      SONAR_TOKEN:${{secrets.SONAR_TOKEN}}
-       # -Dsonar.host.url=${{env.SONAR_HOST_URL}}
-       # -Dsonar.login=${{env.SONAR_TOKEN}}
+       -Dsonar.host.url=${{env.SONAR_HOST_URL}}
+       -Dsonar.login=${{env.SONAR_TOKEN}}
 
   
