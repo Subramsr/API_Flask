@@ -73,8 +73,8 @@ jobs:
 
    - name: Debug Sonar variables
      run: |
-      echo "Sonar Project Key= '${SONAR_PROJECT_KEY'}"
-      echo "Sonar Organization= '${SONAR_ORG'}"
+      echo "Sonar Project Key= '${SONAR_PROJECT_KEY}'"
+      echo "Sonar Organization= '${SONAR_ORG}'"
       # echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
 
    - name: SonarCloud Scan
