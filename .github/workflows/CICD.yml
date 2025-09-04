@@ -67,6 +67,10 @@ jobs:
       path: ~/.sonar/cache
       key: ${{runner.os}}-sonar
       restore-keys: ${{runner.os}}-sonar
+   
+   - name: Clear Sonar Cache
+     run: rm -rf ~/.sonar/cache
+
    - name: SonarCloud Scan
      uses: SonarSource/sonarcloud-github-action@v2
      with:
