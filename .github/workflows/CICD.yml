@@ -75,9 +75,11 @@ jobs:
      uses: SonarSource/sonarcloud-github-action@v2
      with:
       args: >
-       -Dsonar.projectKey=my_project_key
-       -Dsonar.organization=my_org
-       -Dsonar.host.url=${{env.SONAR_HOST_URL}}
-       -Dsonar.login=${{env.SONAR_TOKEN}}
+       -Dsonar.projectKey=API_Flask
+       -Dsonar.organization=subramsr
+     env:
+      SONAR_TOKEN:${{secrets.SONAR_TOKEN}}
+       # -Dsonar.host.url=${{env.SONAR_HOST_URL}}
+       # -Dsonar.login=${{env.SONAR_TOKEN}}
 
   
