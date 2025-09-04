@@ -73,9 +73,9 @@ jobs:
 
    - name: Debug Sonar variables
      run: |
-      echo "Sonar Project Key:my_project_key"
-      echo "Sonar Organization:my_org"
-      echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
+      echo "Sonar Project Key= '${SONAR_PROJECT_KEY'}"
+      echo "Sonar Organization= '${SONAR_ORG'}"
+      # echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
 
    - name: SonarCloud Scan
      uses: SonarSource/sonarcloud-github-action@v2
