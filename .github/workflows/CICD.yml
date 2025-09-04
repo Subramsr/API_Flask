@@ -72,4 +72,4 @@ jobs:
      with:
       args: >
        -Dsonar.projectKey=my_project_key \
-       -Dsonar.organization=my_org \     
+       -Dsonar.organization=my_org    
