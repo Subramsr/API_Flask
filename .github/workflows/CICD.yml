@@ -71,6 +71,12 @@ jobs:
    - name: Clear Sonar Cache
      run: rm -rf ~/.sonar/cache
 
+   - name: Debug Sonar variables
+     run: |
+      echo "Sonar Project Key:my_project_key"
+      echo "Sonar Organization:my_org"
+      echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
+
    - name: SonarCloud Scan
      uses: SonarSource/sonarcloud-github-action@v2
      with:
@@ -78,8 +84,4 @@ jobs:
        -Dsonar.projectKey=my_project_key
        -Dsonar.organization=my_org
 
-   - name: Debug Sonar variables
-     run: |
-      echo "Sonar Project Key:my_project_key"
-      echo "Sonar Organization:my_org"
-      echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
+  
