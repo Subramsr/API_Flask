@@ -76,4 +76,10 @@ jobs:
      with:
       args: >
        -Dsonar.projectKey=my_project_key
-       -Dsonar.organization=my_org    
+       -Dsonar.organization=my_org
+
+   - name: Debug Sonar variables
+     run: |
+      echo "Sonar Project Key:my_project_key"
+      echo "Sonar Organization:my_org"
+      echo "Sonar token is: ${{secrets.SONAR_TOKEN}}"
